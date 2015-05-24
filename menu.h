@@ -2,6 +2,7 @@
 #define MENU_H
 
 #include <QMainWindow>
+#include <QtCore>
 
 namespace Ui {
 class Menu;
