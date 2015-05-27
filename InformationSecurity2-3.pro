@@ -21,3 +21,14 @@ FORMS    += menu.ui
 
 RESOURCES += \
     resource.qrc
+
+DISTFILES += \
+    ico/bmp_add_24.ico \
+    ico/bmp_save_24.ico \
+    ico/close_24.ico \
+    ico/door_back_24.ico \
+    ico/filesystem_24.ico \
+    ico/folder_add_24.ico \
+    ico/Login.ico \
+    ico/support_24.ico \
+    ico/tga_help_24.ico

@@ -6,6 +6,7 @@
         <file>ico/door_back_24.ico</file>
         <file>ico/filesystem_24.ico</file>
         <file>ico/folder_add_24.ico</file>
+        <file>ico/Login.ico</file>
         <file>ico/support_24.ico</file>
         <file>ico/tga_help_24.ico</file>
     </qresource>
