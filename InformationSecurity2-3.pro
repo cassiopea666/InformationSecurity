@@ -13,9 +13,11 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        menu.cpp
+        menu.cpp \
+    menulocal.cpp
 
-HEADERS  += menu.h
+HEADERS  += menu.h \
+    menulocal.h
 
 FORMS    += menu.ui
 
