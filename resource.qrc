@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="/ico">
+    <qresource prefix="/">
         <file>ico/bmp_add_24.ico</file>
         <file>ico/bmp_save_24.ico</file>
         <file>ico/close_24.ico</file>
