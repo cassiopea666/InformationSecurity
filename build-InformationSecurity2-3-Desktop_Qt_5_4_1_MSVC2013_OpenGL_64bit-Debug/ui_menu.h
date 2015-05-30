@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
@@ -50,6 +51,11 @@ public:
     QLabel *label_3;
     QTabWidget *tabWidget;
     QWidget *tab_ciphers;
+    QLineEdit *lineEditPlaintext;
+    QCheckBox *ReadFromFile;
+    QLineEdit *lineEditKey;
+    QLabel *label_plaintext1;
+    QLabel *label_key1;
     QWidget *tab_diffiehellman;
     QWidget *tab_symmetric;
     QWidget *tab_hash;
@@ -66,7 +72,7 @@ public:
     {
         if (Menu->objectName().isEmpty())
             Menu->setObjectName(QStringLiteral("Menu"));
-        Menu->resize(898, 625);
+        Menu->resize(900, 750);
         QPalette palette;
         QBrush brush(QColor(255, 255, 255, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -214,6 +220,21 @@ public:
         tabWidget->setTabBarAutoHide(false);
         tab_ciphers = new QWidget();
         tab_ciphers->setObjectName(QStringLiteral("tab_ciphers"));
+        lineEditPlaintext = new QLineEdit(tab_ciphers);
+        lineEditPlaintext->setObjectName(QStringLiteral("lineEditPlaintext"));
+        lineEditPlaintext->setGeometry(QRect(20, 30, 231, 20));
+        ReadFromFile = new QCheckBox(tab_ciphers);
+        ReadFromFile->setObjectName(QStringLiteral("ReadFromFile"));
+        ReadFromFile->setGeometry(QRect(19, 60, 231, 20));
+        lineEditKey = new QLineEdit(tab_ciphers);
+        lineEditKey->setObjectName(QStringLiteral("lineEditKey"));
+        lineEditKey->setGeometry(QRect(20, 110, 231, 20));
+        label_plaintext1 = new QLabel(tab_ciphers);
+        label_plaintext1->setObjectName(QStringLiteral("label_plaintext1"));
+        label_plaintext1->setGeometry(QRect(20, 6, 231, 21));
+        label_key1 = new QLabel(tab_ciphers);
+        label_key1->setObjectName(QStringLiteral("label_key1"));
+        label_key1->setGeometry(QRect(20, 86, 231, 21));
         tabWidget->addTab(tab_ciphers, QString());
         tab_diffiehellman = new QWidget();
         tab_diffiehellman->setObjectName(QStringLiteral("tab_diffiehellman"));
@@ -270,7 +291,7 @@ public:
         Menu->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(Menu);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 898, 21));
+        menuBar->setGeometry(QRect(0, 0, 900, 21));
         Menu->setMenuBar(menuBar);
         mainToolBar = new QToolBar(Menu);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -296,6 +317,9 @@ public:
         SelectEncFPath->setText(QApplication::translate("Menu", "...", 0));
         label->setText(QApplication::translate("Menu", "\320\250\320\273\321\217\321\205 \320\264\320\276 \321\204\320\260\320\271\320\273\321\203 \320\267 \320\262\321\226\320\264\320\272\321\200\320\270\321\202\320\270\320\274 \321\202\320\265\320\272\321\201\321\202\320\276\320\274 (\320\264\320\273\321\217 \321\210\320\270\321\204\321\200\321\203\320\262\320\260\320\275\320\275\321\217):", 0));
         label_3->setText(QApplication::translate("Menu", "\320\250\320\273\321\217\321\205 \320\264\320\276 \321\204\320\260\320\271\320\273\321\203 \320\267 \321\210\320\270\321\204\321\200\320\276\321\202\320\265\320\272\321\201\321\202\320\276\320\274 (\320\264\320\273\321\217 \320\264\320\265\321\210\320\270\321\204\321\200\321\203\320\262\320\260\320\275\320\275\321\217):", 0));
+        ReadFromFile->setText(QApplication::translate("Menu", "\320\227\321\207\320\270\321\202\320\260\321\202\320\270 plaintext \320\267 \321\204\320\260\320\271\320\273\321\203", 0));
+        label_plaintext1->setText(QApplication::translate("Menu", "\320\222\320\262\320\265\321\201\321\202\320\270 \321\204\321\200\320\260\320\267\321\203 \320\264\320\273\321\217 \321\210\320\270\321\204\321\200\321\203\320\262\320\260\320\275\320\275\321\217:", 0));
+        label_key1->setText(QApplication::translate("Menu", "\320\227\320\260\320\264\320\260\321\202\320\270 \320\272\320\273\321\216\321\207\320\276\320\262\321\203 \321\204\321\200\320\260\320\267\321\203:", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_ciphers), QApplication::translate("Menu", "\342\204\226  1", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_diffiehellman), QApplication::translate("Menu", "\342\204\226  2", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_symmetric), QApplication::translate("Menu", "\342\204\226  3", 0));

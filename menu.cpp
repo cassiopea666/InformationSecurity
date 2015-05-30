@@ -54,3 +54,4 @@ void Menu::on_SelectEncFPath_clicked()
   ui->CiphertextPath->setText(fileName);
   PrintInputFile(fileName);
 }
+

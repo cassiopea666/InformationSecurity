@@ -25,6 +25,10 @@ private slots:
   void on_SelectInFPath_clicked();
   void on_SelectEncFPath_clicked();
 
+  void on_checkBox_stateChanged(int arg1);
+
+  void on_ReadFromFile_stateChanged(int arg1);
+
 private:
   Ui::Menu *ui;
 };
