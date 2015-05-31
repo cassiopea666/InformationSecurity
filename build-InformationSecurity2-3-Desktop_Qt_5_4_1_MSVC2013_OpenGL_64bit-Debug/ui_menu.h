@@ -156,7 +156,7 @@ public:
         SelectInFPath->setIcon(icon1);
         SelectInFPath->setIconSize(QSize(20, 20));
         SelectInFPath->setPopupMode(QToolButton::DelayedPopup);
-        SelectInFPath->setToolButtonStyle(Qt::ToolButtonTextOnly);
+        SelectInFPath->setToolButtonStyle(Qt::ToolButtonIconOnly);
         SelectInFPath->setAutoRaise(false);
 
         gridLayout_2->addWidget(SelectInFPath, 0, 1, 1, 1);
@@ -173,7 +173,7 @@ public:
         SelectEncFPath->setMinimumSize(QSize(25, 25));
         SelectEncFPath->setIcon(icon1);
         SelectEncFPath->setIconSize(QSize(20, 20));
-        SelectEncFPath->setToolButtonStyle(Qt::ToolButtonTextOnly);
+        SelectEncFPath->setToolButtonStyle(Qt::ToolButtonIconOnly);
 
         gridLayout_2->addWidget(SelectEncFPath, 0, 3, 1, 1);
 

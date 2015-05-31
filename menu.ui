@@ -309,7 +309,7 @@
            <enum>QToolButton::DelayedPopup</enum>
           </property>
           <property name="toolButtonStyle">
-           <enum>Qt::ToolButtonTextOnly</enum>
+           <enum>Qt::ToolButtonIconOnly</enum>
           </property>
           <property name="autoRaise">
            <bool>false</bool>
@@ -354,7 +354,7 @@
            </size>
           </property>
           <property name="toolButtonStyle">
-           <enum>Qt::ToolButtonTextOnly</enum>
+           <enum>Qt::ToolButtonIconOnly</enum>
           </property>
          </widget>
         </item>

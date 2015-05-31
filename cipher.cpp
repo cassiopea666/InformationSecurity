@@ -1,8 +1,8 @@
 #include <cipher.h>
 
-unsigned char VigenereEncryptSymbol(unsigned char PlainSymbol, unsigned char* Key, int pos) {
+unsigned char VigenereEncryptSymbol(unsigned char PlainSymbol, unsigned char Key) {
   //key - row, plaintext symbol - column of Vigenere square
-  int i = (int) Key[pos], j = (int) PlainSymbol;
+  int i = (int) Key, j = (int) PlainSymbol;
   if ((i + j) <= 255) {
     return (unsigned char) (i + j);
   }

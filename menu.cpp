@@ -3,6 +3,8 @@
 
 Menu::Menu(QWidget *parent) : QMainWindow(parent), ui(new Ui::Menu)
 {
+    setlocale(LC_ALL, "Ukrainian");
+    qDebug() << "Current locale set to --> "<<setlocale(LC_ALL,NULL);
     ui->setupUi(this);
     ui->statusBar->showMessage("ТЕМА: Основні криптографічні методи захисту інформації.");
 }
@@ -62,23 +64,22 @@ void Menu::on_ReadFromFile_stateChanged(int arg1)
 }
 
 void Menu::on_VigenereEncryptButton_clicked() {
-  unsigned char* Plaintext = (unsigned char*)ui->lineEditPlaintext->text().toStdString().c_str();
-  unsigned char* Key = (unsigned char*)ui->lineEditKey->text().toStdString().c_str();
-  int i = 0, k =0;
-  qDebug() << ui->lineEditPlaintext->text() << "\t" << Plaintext[i] <<"\t" <<(char) Plaintext[i];
+  QByteArray Plaintext = QByteArray(ui->lineEditPlaintext->text().toUtf8());
+  QByteArray Key = QByteArray(ui->lineEditKey->text().toUtf8());
+  qDebug() << Plaintext.data() << Key.data(); //memcpy(Plaintext, ui->lineEditPlaintext->text().toStdString().c_str(), ui->lineEditPlaintext->text().size());
+  uchar res;
+  int i = 0, k = 0; res = VigenereEncryptSymbol((uchar)Plaintext[i], (uchar)Key[k]); k++;
   while (i < ui->lineEditPlaintext->text().length()) {
-    if (k < ui->lineEditKey->text().length()) {
-      qDebug() << Plaintext[i] <<"\t"<<(char) Plaintext[i]<<"\t"<< Key[k] <<"\t"<< (char) Key[k] <<"\t"<< VigenereEncryptSymbol(Plaintext[i], Key, k) <<"\t"<< (char) VigenereEncryptSymbol(Plaintext[i], Key, k);
-      k++;
+    if (k < (ui->lineEditKey->text().length() - 1)) {
+      k++; res = VigenereEncryptSymbol((uchar)Plaintext[i], (uchar)Key[k]);
     }
     else {
-      k = 0;
-      qDebug() << Plaintext[i] <<"\t"<<(char) Plaintext[i]<<"\t"<< Key[k] <<"\t"<< (char) Key[k] <<"\t"<< VigenereEncryptSymbol(Plaintext[i], Key, k) <<"\t"<< (char) VigenereEncryptSymbol(Plaintext[i], Key, k);
-      k++;
+      k = 0; res = VigenereEncryptSymbol((uchar)Plaintext[i], (uchar)Key[k]); k++;
     }
+    qDebug() << "i = " <<i<<"\t"<<(uchar) Plaintext[i] << "\t" << QByteArray::number((uchar) Plaintext[i], 16).toUpper() << "\t"<< Key[k] <<"\t"<< (uchar) Key[k] <<"\t"<< res <<"\t"<< (char) res;
     i++;
   }
-  //qDebug() << "hello world"<<"\n"<<(char) VigenereEncryptSymbol(65, (unsigned char*)ui->lineEditKey->text().toStdString().c_str(), 3) << endl;
+  ui->OutputFile->append(QString(Plaintext.data()));
 }
 
 
