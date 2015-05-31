@@ -533,6 +533,9 @@
           <height>20</height>
          </rect>
         </property>
+        <property name="text">
+         <string>&quot;Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...&quot; &quot;Немає нікого, хто любив би самий біль, хто б шукав його чи хотів би його зазнавати тільки через те, що він - біль...&quot;</string>
+        </property>
        </widget>
        <widget class="QCheckBox" name="ReadFromFile">
         <property name="geometry">
@@ -555,6 +558,9 @@
           <width>231</width>
           <height>20</height>
          </rect>
+        </property>
+        <property name="text">
+         <string>ESPIONAGE</string>
         </property>
        </widget>
        <widget class="QLabel" name="label_plaintext1">
@@ -582,6 +588,45 @@
         <property name="text">
          <string>Задати ключову фразу:</string>
         </property>
+       </widget>
+       <widget class="QGroupBox" name="groupBox">
+        <property name="geometry">
+         <rect>
+          <x>19</x>
+          <y>149</y>
+          <width>231</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Vigenère square</string>
+        </property>
+        <widget class="QPushButton" name="VigenereEncryptButton">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>20</y>
+           <width>101</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Encrypt</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="VigenereDecryptButton">
+         <property name="geometry">
+          <rect>
+           <x>124</x>
+           <y>20</y>
+           <width>101</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Decrypt</string>
+         </property>
+        </widget>
        </widget>
       </widget>
       <widget class="QWidget" name="tab_diffiehellman">

@@ -16,6 +16,7 @@
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
@@ -23,6 +24,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPlainTextEdit>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTextEdit>
@@ -56,6 +58,9 @@ public:
     QLineEdit *lineEditKey;
     QLabel *label_plaintext1;
     QLabel *label_key1;
+    QGroupBox *groupBox;
+    QPushButton *VigenereEncryptButton;
+    QPushButton *VigenereDecryptButton;
     QWidget *tab_diffiehellman;
     QWidget *tab_symmetric;
     QWidget *tab_hash;
@@ -235,6 +240,15 @@ public:
         label_key1 = new QLabel(tab_ciphers);
         label_key1->setObjectName(QStringLiteral("label_key1"));
         label_key1->setGeometry(QRect(20, 86, 231, 21));
+        groupBox = new QGroupBox(tab_ciphers);
+        groupBox->setObjectName(QStringLiteral("groupBox"));
+        groupBox->setGeometry(QRect(19, 149, 231, 61));
+        VigenereEncryptButton = new QPushButton(groupBox);
+        VigenereEncryptButton->setObjectName(QStringLiteral("VigenereEncryptButton"));
+        VigenereEncryptButton->setGeometry(QRect(10, 20, 101, 23));
+        VigenereDecryptButton = new QPushButton(groupBox);
+        VigenereDecryptButton->setObjectName(QStringLiteral("VigenereDecryptButton"));
+        VigenereDecryptButton->setGeometry(QRect(124, 20, 101, 23));
         tabWidget->addTab(tab_ciphers, QString());
         tab_diffiehellman = new QWidget();
         tab_diffiehellman->setObjectName(QStringLiteral("tab_diffiehellman"));
@@ -317,9 +331,14 @@ public:
         SelectEncFPath->setText(QApplication::translate("Menu", "...", 0));
         label->setText(QApplication::translate("Menu", "\320\250\320\273\321\217\321\205 \320\264\320\276 \321\204\320\260\320\271\320\273\321\203 \320\267 \320\262\321\226\320\264\320\272\321\200\320\270\321\202\320\270\320\274 \321\202\320\265\320\272\321\201\321\202\320\276\320\274 (\320\264\320\273\321\217 \321\210\320\270\321\204\321\200\321\203\320\262\320\260\320\275\320\275\321\217):", 0));
         label_3->setText(QApplication::translate("Menu", "\320\250\320\273\321\217\321\205 \320\264\320\276 \321\204\320\260\320\271\320\273\321\203 \320\267 \321\210\320\270\321\204\321\200\320\276\321\202\320\265\320\272\321\201\321\202\320\276\320\274 (\320\264\320\273\321\217 \320\264\320\265\321\210\320\270\321\204\321\200\321\203\320\262\320\260\320\275\320\275\321\217):", 0));
+        lineEditPlaintext->setText(QApplication::translate("Menu", "\"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...\" \"\320\235\320\265\320\274\320\260\321\224 \320\275\321\226\320\272\320\276\320\263\320\276, \321\205\321\202\320\276 \320\273\321\216\320\261\320\270\320\262 \320\261\320\270 \321\201\320\260\320\274\320\270\320\271 \320\261\321\226\320\273\321\214, \321\205\321\202\320\276 \320\261 \321\210\321\203\320\272\320\260\320\262 \320\271\320\276\320\263\320\276 \321\207\320\270 \321\205\320\276\321\202\321\226\320\262 \320\261\320\270 \320\271\320\276\320\263\320\276 \320\267\320\260\320\267\320\275\320\260\320\262\320\260\321\202\320\270 \321\202\321\226\320\273\321\214\320\272\320\270 \321\207\320\265\321\200\320\265\320\267 \321\202\320\265, \321\211\320\276 \320\262\321\226\320\275 - \320\261\321\226\320\273\321\214...\"", 0));
         ReadFromFile->setText(QApplication::translate("Menu", "\320\227\321\207\320\270\321\202\320\260\321\202\320\270 plaintext \320\267 \321\204\320\260\320\271\320\273\321\203", 0));
+        lineEditKey->setText(QApplication::translate("Menu", "ESPIONAGE", 0));
         label_plaintext1->setText(QApplication::translate("Menu", "\320\222\320\262\320\265\321\201\321\202\320\270 \321\204\321\200\320\260\320\267\321\203 \320\264\320\273\321\217 \321\210\320\270\321\204\321\200\321\203\320\262\320\260\320\275\320\275\321\217:", 0));
         label_key1->setText(QApplication::translate("Menu", "\320\227\320\260\320\264\320\260\321\202\320\270 \320\272\320\273\321\216\321\207\320\276\320\262\321\203 \321\204\321\200\320\260\320\267\321\203:", 0));
+        groupBox->setTitle(QApplication::translate("Menu", "Vigen\303\250re square", 0));
+        VigenereEncryptButton->setText(QApplication::translate("Menu", "Encrypt", 0));
+        VigenereDecryptButton->setText(QApplication::translate("Menu", "Decrypt", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_ciphers), QApplication::translate("Menu", "\342\204\226  1", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_diffiehellman), QApplication::translate("Menu", "\342\204\226  2", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_symmetric), QApplication::translate("Menu", "\342\204\226  3", 0));

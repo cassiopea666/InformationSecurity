@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_Menu_t {
     QByteArrayData data[9];
-    char stringdata[149];
+    char stringdata[157];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -35,16 +35,16 @@ QT_MOC_LITERAL(2, 32, 0), // ""
 QT_MOC_LITERAL(3, 33, 5), // "index"
 QT_MOC_LITERAL(4, 39, 24), // "on_SelectInFPath_clicked"
 QT_MOC_LITERAL(5, 64, 25), // "on_SelectEncFPath_clicked"
-QT_MOC_LITERAL(6, 90, 24), // "on_checkBox_stateChanged"
-QT_MOC_LITERAL(7, 115, 4), // "arg1"
-QT_MOC_LITERAL(8, 120, 28) // "on_ReadFromFile_stateChanged"
+QT_MOC_LITERAL(6, 90, 28), // "on_ReadFromFile_stateChanged"
+QT_MOC_LITERAL(7, 119, 4), // "arg1"
+QT_MOC_LITERAL(8, 124, 32) // "on_VigenereEncryptButton_clicked"
 
     },
     "Menu\0on_tabWidget_tabBarClicked\0\0index\0"
     "on_SelectInFPath_clicked\0"
     "on_SelectEncFPath_clicked\0"
-    "on_checkBox_stateChanged\0arg1\0"
-    "on_ReadFromFile_stateChanged"
+    "on_ReadFromFile_stateChanged\0arg1\0"
+    "on_VigenereEncryptButton_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -66,14 +66,14 @@ static const uint qt_meta_data_Menu[] = {
        4,    0,   42,    2, 0x08 /* Private */,
        5,    0,   43,    2, 0x08 /* Private */,
        6,    1,   44,    2, 0x08 /* Private */,
-       8,    1,   47,    2, 0x08 /* Private */,
+       8,    0,   47,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void, QMetaType::Int,    3,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int,    7,
-    QMetaType::Void, QMetaType::Int,    7,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -86,8 +86,8 @@ void Menu::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void *
         case 0: _t->on_tabWidget_tabBarClicked((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 1: _t->on_SelectInFPath_clicked(); break;
         case 2: _t->on_SelectEncFPath_clicked(); break;
-        case 3: _t->on_checkBox_stateChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 4: _t->on_ReadFromFile_stateChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 3: _t->on_ReadFromFile_stateChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 4: _t->on_VigenereEncryptButton_clicked(); break;
         default: ;
         }
     }

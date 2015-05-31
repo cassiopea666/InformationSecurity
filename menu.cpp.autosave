@@ -78,7 +78,6 @@ void Menu::on_VigenereEncryptButton_clicked() {
     }
     i++;
   }
-  //qDebug() << "hello world"<<"\n"<<(char) VigenereEncryptSymbol(65, (unsigned char*)ui->lineEditKey->text().toStdString().c_str(), 3) << endl;
 }
 
 

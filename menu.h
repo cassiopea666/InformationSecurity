@@ -5,7 +5,7 @@
 #include <QtCore>
 #include <QMessageBox>
 #include <QFileDialog>
-#include "MenuLocal.h"
+#include <cipher.h>
 
 namespace Ui {
 class Menu;
@@ -24,10 +24,9 @@ private slots:
   void on_tabWidget_tabBarClicked(int index);
   void on_SelectInFPath_clicked();
   void on_SelectEncFPath_clicked();
-
-  void on_checkBox_stateChanged(int arg1);
-
   void on_ReadFromFile_stateChanged(int arg1);
+
+  void on_VigenereEncryptButton_clicked();
 
 private:
   Ui::Menu *ui;
